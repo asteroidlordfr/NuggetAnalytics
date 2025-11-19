@@ -9,5 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let videoId = null;
     let videoDetails = null;
-    
-    const corsProxy
+
+    const corsProxy = 'https://cors-anywhere.herokuapp.com/';
+
+    function getVideoId(url) {
+        const regExp = /^.*((youtu.be\/)|(v\/)|(\/
