@@ -1,31 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>AI Geometry Dash Creator</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NuggetAnalytics | VR Game Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<h1>AI Geometry Dash Level Creator</h1>
+    <nav class="navbar">
+        <div class="logo">Nugget<span>Analytics</span></div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Products ▼</a>
+                <div class="dropdown-content">
+                    <a href="#privacy">Gorilla Tags (Privacy Policy)</a>
+                </div>
+            </li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<textarea id="prompt" placeholder="Type your prompt here"></textarea>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Immersive <span class="purple-text">VR Experiences</span></h1>
+            <p>Pushing the boundaries of VR with our products..</p>
+            <button class="cta-btn">Explore Games</button>
+        </div>
+    </header>
 
-<button onclick="generateLevel()">Generate Level</button>
+    <section id="privacy" class="content-section">
+        <h2>Gorilla Tags Privacy Policy</h2>
+        <div class="policy-box">
+            <p></p>
+            <p>At NuggetAnalytics, we value your privacy. This section outlines how we handle data within the Gorilla Tags VR experience...</p>
+        </div>
+    </section>
 
-<p id="levelName"></p>
-<p id="objectCount"></p>
-
-<canvas id="preview" width="1100" height="220"></canvas>
-
-<button id="exportBtn" onclick="exportGMD()" disabled>Export .gmd</button>
-
-<!-- REQUIRED: gzip compression for Geometry Dash -->
-<script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
-
-<!-- Your scripts -->
-<script src="generator.js"></script>
-<script src="preview.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
