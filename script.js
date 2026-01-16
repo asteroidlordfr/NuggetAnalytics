@@ -1,21 +1,38 @@
-// Change navbar background on scroll
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = '#000';
-        navbar.style.padding = '15px 10%';
-    } else {
-        navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-        navbar.style.padding = '20px 10%';
-    }
-});
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('[data-section]');
+    const sections = document.querySelectorAll('.page-section');
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetSection = link.getAttribute('data-section');
+
+            // 1. Fade out current active section
+            const currentActive = document.querySelector('.page-section.active');
+            currentActive.style.opacity = '0';
+            currentActive.style.transform = 'translateY(-20px)';
+
+            // 2. Wait for fade out, then switch
+            setTimeout(() => {
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    section.style.display = 'none';
+                });
+
+                const newSection = document.getElementById(targetSection);
+                newSection.style.display = 'flex';
+                
+                // Trigger reflow
+                newSection.offsetHeight; 
+
+                newSection.classList.add('active');
+                newSection.style.opacity = '1';
+                newSection.style.transform = 'translateY(0)';
+                
+                // Update active link styling
+                links.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            }, 400); 
         });
     });
 });
