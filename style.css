@@ -20,6 +20,10 @@ body {
     overflow-x: hidden;
 }
 
+.glass-card p {
+    white-space: pre-line;
+}
+
 /* Dynamic Background Glow */
 .bg-glow {
     position: fixed;
