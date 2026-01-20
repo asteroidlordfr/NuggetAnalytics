@@ -6,6 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('[data-section]')
     const sections = document.querySelectorAll('.page-section')
 
+    const discordBtn = document.getElementById('discordBtn')
+    if (discordBtn) {
+        discordBtn.addEventListener('click', () => {
+            window.open('https://discord.gg/UGeFCEsRbz', '_blank')
+        })
+    }
+
     links.forEach(link => {
         link.addEventListener('click', e => {
             e.preventDefault()
