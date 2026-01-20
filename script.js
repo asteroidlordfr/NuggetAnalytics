@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const discordBtn = document.getElementById('discordBtn')
     if (discordBtn) {
         discordBtn.addEventListener('click', () => {
-            window.open('https://discord.gg/UGeFCEsRbz', '_blank')
+            window.open('mailto:asteroidbusiness1@gmail.com', '_blank')
         })
     }
 
